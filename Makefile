@@ -1,28 +1,22 @@
-CC=gcc
-CXX=g++
-RM=rm -f
-CPPFLAGS=-g $(shell root-config --cflags)
-LDFLAGS=-g $(shell root-config --ldflags)
-LDLIBS=$(shell root-config --libs)
+Gpp=g++
+srcs=$(wildcard *.cpp) $(wildcard */*.cpp) 
+objs=$(srcs:.cpp=.o)
+deps=$(srcs:.cpp=.d)
+INC=-Ilib -Isrc
 
-SRCS=src/UserHeaderLabel.cpp
-OBJS=$(subst .cc,.o,$(SRCS))
+all: test
+	@echo $(srcs)
 
-all: tool
+test: $(objs)
+	$(Gpp) $^ -o $@
 
-tool: $(OBJS)
-	    $(CXX) $(LDFLAGS) -o tool $(OBJS) $(LDLIBS) 
+%.o: %.cpp
+	$(Gpp) -MMD -MP $(INC) -c $< -o $@
 
-depend: .depend
+.PHONY: clean
 
-.depend: $(SRCS)
-	    $(RM) ./.depend
-		    $(CXX) $(CPPFLAGS) -MM $^>>./.depend;
-
+# $(RM) is rm -f by default
 clean:
-	    $(RM) $(OBJS)
+	$(RM) $(objs) $(deps) test
 
-distclean: clean
-	    $(RM) *~ .depend
-
-include .depend
+-include $(deps)
