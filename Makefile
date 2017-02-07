@@ -7,8 +7,9 @@ INC=-Ilib -Isrc
 all: test
 	@echo $(srcs)
 
-test: $(objs)
+check: $(objs)
 	$(Gpp) $^ -o $@
+	./check
 
 %.o: %.cpp
 	$(Gpp) -MMD -MP $(INC) -c $< -o $@
