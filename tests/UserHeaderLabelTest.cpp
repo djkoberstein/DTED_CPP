@@ -1,5 +1,5 @@
 #include <iostream>
-#include "catch/catch.hpp"
+#include "catch.hpp"
 
 using std::cout;
 using std::endl;
