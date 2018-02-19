@@ -6,7 +6,7 @@ dted_lib = shared_library('dted',
 )
 
 dted_tests = executable('dted_tests',
-    'tests/test.cpp',
+    'tests/catchmain.cpp',
     'tests/UserHeaderLabelTest.cpp',
     link_with : dted_lib
 )
