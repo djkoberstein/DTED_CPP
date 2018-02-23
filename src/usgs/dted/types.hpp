@@ -61,5 +61,52 @@ struct UserHeaderLabel
 	// Unused portion for future use.
 	char Reserved[24];
 };
+
+struct DataSetIdentification
+{
+	char RecognitionSentiel[3];
+	char SecurityClassificationCode;
+	char SecurityControlAndReleaseMarkings[2];
+	char SecurityHandlingDescription[27];
+	char ReservedForFutureUse1[26];
+	char DMASeriesDesignatorForProductLevel[5];
+	char UniqueReferenceNumber[15];
+	char ReservedForFutureUse2[8];
+	char DataEditionNumber[2];
+	char MatchMergeVersion;
+	char MaintenanceDate[4];
+	char MatchMergeDate[4];
+	char MaintenanceDescriptionCode[4];
+	char ProducerCode[8];
+	char ReservedForFutureUse3[16];
+	char ProductSpecification[9];
+	char ProductSpecificationAmendment[2];
+	char DateOfProductSpecification[4];
+	char VerticalDatum[3];
+	char HorizontalDatumCode[5];
+	char DigitizingCollectionSystem[10];
+	char CompilationDate[4];
+	char ReservedForFutureUse4[22];
+	char LatitudeOfOriginOfData[9];
+	char LongitudeOfOriginOfData[10];
+	char LatitudeOfSWCornerOfData[7];
+	char LongitudeOfSWCornerOfData[8];
+	char LatitudeOfNWCornerOfData[7];
+	char LongitudeOfNWCornerOfData[8];
+	char LatitudeOfNECornerOfData[7];
+	char LongitudeOfNECornerOfData[8];
+	char LatitudeOfSECornerOfData[7];
+	char LongitudeOfSECornerOfData[8];
+	char OrientationAngle[9];
+	char LatitudeInterval[4]; // tenths of seconds
+	char LongitudeInterval[4]; // tenths of seconds
+	char NumberOfLatitudeLines[4];
+	char NumberOfLongitudeLines[4];
+	char PartialCellIndicator[2];
+	char ReservedForDmaUseOnly[101];
+	char ReservedForProducingNationUseOnly[100];
+	char ReservedForFutureUse5[156];
+};
+
 }
 }
