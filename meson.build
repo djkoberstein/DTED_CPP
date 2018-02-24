@@ -18,5 +18,6 @@ dted_dep = declare_dependency(
 dted_tests = executable('dted_tests',
     'tests/catchmain.cpp',
     'tests/usgs/dted/decoder.cpp',
+    'tests/usgs/dted/types.cpp',
     dependencies: dted_dep)
 test('catch tests', dted_tests)

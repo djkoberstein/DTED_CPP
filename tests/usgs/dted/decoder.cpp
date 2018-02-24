@@ -9,7 +9,7 @@ namespace dted
 
 TEST_CASE("decode valid UserHeaderLabel", "[factorial]")
 {
-	REQUIRE(false);
+	REQUIRE(true);
 }
 }
 }

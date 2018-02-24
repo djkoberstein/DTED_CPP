@@ -108,5 +108,40 @@ struct DataSetIdentification
 	char ReservedForFutureUse5[156];
 };
 
+struct CoordinatePairDescription
+{
+	char Latitude[9];
+	char Longitude[10];
+};
+
+struct AccuracySubregionDescription 
+{
+	char AbsoluteHorizontalAccuracy[4]; // Meters
+	char AbsoluteVerticalAccuracy[4];   // Meters
+	char RelativeHorizontalAccuracy[4]; // Meters
+	char RelativeVerticalAccuracy[4];   // Meters
+	char NumberOfCoordinatesInAccuracySubRegionOutline[2];
+	struct CoordinatePairDescription CoordinatePairDescriptions[14];
+};
+
+struct AccuracyDescriptionRecord
+{
+	char RecognitionSentinel[3];
+	char AbsoluteHorizontalAccuracy[4]; // Meters
+	char AbsoluteVerticalAccuracy[4];   // Meters
+	char RelativeHorizontalAccuracy[4]; // Meters
+	char RelativeVerticalAccuracy[4];   // Meters
+	char ReservedForFutureUse1[4];
+	char ReservedForNimaUseOnly1;
+	char ReservedForFutureUse2[31];
+	char MultipleAccuracyOutlineFlag[2];
+	struct AccuracySubregionDescription AccuracySubregionDescription[9];
+	char ReservedForNimaUseOnly2[18];
+	char ReservedForFutureUse3[69];
+};
+
+
+
+
 }
 }
