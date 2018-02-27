@@ -7,8 +7,8 @@ namespace dted
 
 UserHeaderLabel decode(const std::vector<uint8_t> bytes, int offset)
 {
-    UserHeaderLabel uhl;
-    return uhl;
+    UserHeaderLabel *uhl = (UserHeaderLabel*)&bytes[0];
+    return *uhl;
 }
 }
 }
