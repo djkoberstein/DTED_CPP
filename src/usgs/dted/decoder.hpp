@@ -11,7 +11,7 @@ namespace usgs
 namespace dted
 {
 
-UserHeaderLabel decode(const std::vector<uint8_t> bytes, int offset);
+UserHeaderLabel decode(const std::vector<uint8_t> &bytes, int offset);
 }
 }
 

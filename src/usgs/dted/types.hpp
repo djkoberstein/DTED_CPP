@@ -2,7 +2,7 @@ namespace usgs
 {
 namespace dted
 {
-	
+
 struct UserHeaderLabel
 {
 	// Recognition sentinel
