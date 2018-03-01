@@ -140,8 +140,42 @@ struct AccuracyDescriptionRecord
 	char ReservedForFutureUse3[69];
 };
 
+struct DtedHeader
+{
+	UserHeaderLabel uhl;
+	DataSetIdentification dsi;
+	AccuracyDescriptionRecord acc;
+};
 
+struct DataRecordLevel0
+{
+	char RecognitionSentinel;
+	char DataBlockCount[3];
+	char LongitudeCount[2];
+	char LatitudeCount[2];
+	char Elevation[258];
+	char Checksum[4];
+};
 
+struct DataRecordLevel1
+{
+	char RecognitionSentinel;
+	char DataBlockCount[3];
+	char LongitudeCount[2];
+	char LatitudeCount[2];
+	char Elevation[2414];
+	char Checksum[4];
+};
+
+struct DataRecordLevel2
+{
+	char RecognitionSentinel;
+	char DataBlockCount[3];
+	char LongitudeCount[2];
+	char LatitudeCount[2];
+	char Elevation[7214];
+	char Checksum[4];
+};
 
 }
 }
