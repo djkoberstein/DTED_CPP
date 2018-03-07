@@ -21,3 +21,13 @@ dted_tests = executable('dted_tests',
     'tests/usgs/dted/types.cpp',
     dependencies: dted_dep)
 test('catch tests', dted_tests)
+
+# Documentation
+doxygen = find_program('doxygen', required : false)
+if not doxygen.found()
+  error('MESON_SKIP_TEST doxygen not found.')
+endif
+
+cdata = configuration_data()
+cdata.set('VERSION', meson.project_version())
+subdir('doc')
