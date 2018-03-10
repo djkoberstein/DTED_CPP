@@ -1,6 +1,8 @@
 /build
+/.vscode
 *.swp
 *.d
 *.o
 .depend
 check
+tests/usgs/dted/n43.dt0

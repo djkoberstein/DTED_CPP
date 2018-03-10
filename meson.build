@@ -1,6 +1,7 @@
 project(
     'dted',
     'cpp',
+    version : '0.0.1',
     default_options : ['cpp_std=c++11'])
 
 
@@ -22,12 +23,4 @@ dted_tests = executable('dted_tests',
     dependencies: dted_dep)
 test('catch tests', dted_tests)
 
-# Documentation
-doxygen = find_program('doxygen', required : false)
-if not doxygen.found()
-  error('MESON_SKIP_TEST doxygen not found.')
-endif
-
-cdata = configuration_data()
-cdata.set('VERSION', meson.project_version())
 subdir('docs')
