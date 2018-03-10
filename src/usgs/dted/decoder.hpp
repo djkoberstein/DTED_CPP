@@ -10,7 +10,10 @@ namespace usgs
 {
 namespace dted
 {
-
+    
+/**
+ * Decodes some bytes into the UserHeaderLabel
+ */
 UserHeaderLabel decode(const std::vector<uint8_t> &bytes, int offset);
 }
 }
