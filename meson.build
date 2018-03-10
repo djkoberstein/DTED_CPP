@@ -30,4 +30,4 @@ endif
 
 cdata = configuration_data()
 cdata.set('VERSION', meson.project_version())
-subdir('doc')
+subdir('docs')
