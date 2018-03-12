@@ -4,7 +4,6 @@ project(
     version : '0.0.1',
     default_options : ['cpp_std=c++11'])
 
-
 # Main libary
 dted_inc = include_directories('src')
 dted_lib = static_library('dted', 
